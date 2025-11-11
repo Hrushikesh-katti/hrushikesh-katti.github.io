@@ -63,3 +63,73 @@ body {
     padding: 100px 0;
     background: white;
 }
+
+/* Navigation Bar */
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: transparent;
+    padding: 20px 0;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+#navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#navbar.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 30px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+}
+
+.nav-brand h3 {
+    color: white;
+    font-size: 1.5em;
+    margin: 0;
+}
+
+#navbar.scrolled .nav-brand h3 {
+    color: #333;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+#navbar.scrolled .nav-links a {
+    color: #333;
+}
+
+.nav-links a:hover {
+    color: #ffd700;
+}
+
+/* Update hero section to account for fixed nav */
+#hero {
+    margin-top: 0;
+}
+
+/* Contact Section */
+#contact {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+}
