@@ -1,0 +1,24 @@
+{
+  "name": "hrushikesh-katti.github.io",
+  "version": "1.0.0",
+  "description": "Data Science &amp; AI Portfolio | Machine Learning Engineer | Business Intelligence Analyst | Full-Stack Developer Expertise in predictive analytics, NLP, computer vision, and data visualization.  Showcasing projects in SQL, Python, Tableau, PowerBI, and AI-powered applications that bridge technical analytics with business impact.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hrushikesh-katti/hrushikesh-katti.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Hrushikesh-katti/hrushikesh-katti.github.io/issues"
+  },
+  "homepage": "https://github.com/Hrushikesh-katti/hrushikesh-katti.github.io#readme"
+}
