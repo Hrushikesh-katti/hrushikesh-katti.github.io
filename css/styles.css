@@ -359,7 +359,7 @@ section p {
 .dark-mode .close-btn { color: #ccc; }
 .dark-mode .close-btn:hover { color: #ff5c5c; }
 
-/* === CONTACT CARDS — PURE CSS HOVER (NO GSAP) === */
+/* === CONTACT CARDS — PURE CSS HOVER + ICONS VISIBLE === */
 .contact-options {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -395,17 +395,20 @@ section p {
     height: 100%;
 }
 
+/* ICONS — VISIBLE IN LIGHT MODE */
 .contact-item i {
     width: 40px;
     height: 40px;
-    color: #4a5568;
+    color: #4a5568 !important;
+    stroke-width: 2.2;
     transition: color 0.3s ease;
 }
 
 .contact-item:hover i {
-    color: #667eea;
+    color: #667eea !important;
 }
 
+/* TEXT */
 .contact-item span {
     font-weight: 600;
     font-size: 1em;
@@ -457,18 +460,18 @@ section p {
     transform: translateY(-3px);
 }
 
-/* Dark Mode Contact */
+/* === DARK MODE CONTACT === */
 .dark-mode .contact-item {
     background: #1a1a2e;
     box-shadow: 0 6px 16px rgba(0,0,0,0.3);
 }
 
 .dark-mode .contact-item i {
-    color: #a0c4ff;
+    color: #a0c4ff !important;
 }
 
 .dark-mode .contact-item:hover i {
-    color: #ffd700;
+    color: #ffd700 !important;
 }
 
 .dark-mode .contact-item span {

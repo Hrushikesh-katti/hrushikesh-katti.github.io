@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.toggle('dark-mode', e.target.checked);
     });
 
-    lucide.createIcons();
+    lucide.createIcons();  // THIS LINE IS CRITICAL — ICONS RENDER HERE
 });
 
-console.log('PURE CSS HOVER + JS COPY = NO BUGS');
+console.log('ICONS + COPY + NO HOVER BUGS = FINAL');
