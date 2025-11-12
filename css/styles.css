@@ -222,35 +222,62 @@ body {
     pointer-events: none;
 }
 
-/* === DARK MODE TOGGLE === */
+/* === CLEAN & BIGGER DARK MODE TOGGLE === */
 .theme-toggle {
     cursor: pointer;
-}
-#dark-mode-toggle {
-    display: none;
-}
-#dark-mode-toggle + label {
-    width: 50px; height: 26px;
-    background: #ccc;
-    display: block;
-    border-radius: 50px;
     position: relative;
-    transition: 0.3s;
 }
-#dark-mode-toggle + label::after {
-    content: '';
+
+#dark-mode-toggle {
+    display: none; /* Hides the ugly checkbox */
+}
+
+.theme-toggle label {
+    position: relative;
+    width: 70px;      /* BIGGER */
+    height: 34px;     /* BIGGER */
+    background: #ddd;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 6px;
+    transition: background 0.4s ease;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.theme-toggle .icon {
+    width: 22px; height: 22px;
     position: absolute;
-    top: 3px; left: 3px;
-    width: 20px; height: 20px;
-    background: white;
-    border-radius: 50%;
-    transition: 0.3s;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    pointer-events: none;
 }
+
+.theme-toggle .sun {
+    left: 6px;
+    color: #f39c12;
+    opacity: 1;
+}
+
+.theme-toggle .moon {
+    right: 6px;
+    color: #2c3e50;
+    opacity: 0;
+    transform: translateX(10px);
+}
+
+/* When checked: Dark Mode ON */
 #dark-mode-toggle:checked + label {
     background: #667eea;
 }
-#dark-mode-toggle:checked + label::after {
-    transform: translateX(24px);
+
+#dark-mode-toggle:checked + label .sun {
+    opacity: 0;
+    transform: translateX(36px);
+}
+
+#dark-mode-toggle:checked + label .moon {
+    opacity: 1;
+    transform: translateX(-10px);
 }
 
 /* === DARK MODE STYLES === */

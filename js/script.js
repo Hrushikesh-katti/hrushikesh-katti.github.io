@@ -97,6 +97,9 @@ document.addEventListener('DOMContentLoaded', () => {
     toggle.addEventListener('change', (e) => {
         document.body.classList.toggle('dark-mode', e.target.checked);
     });
+
+    // Initialize Lucide Icons
+    lucide.createIcons();
 });
 
-console.log('Particles + Dark Mode Activated!');
+console.log('Particles + Dark Mode + Icons Activated!');
