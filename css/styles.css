@@ -6,8 +6,11 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Inter', sans-serif;
     line-height: 1.6;
+    background: #f8f9fa;
+    color: #333;
+    transition: background 0.4s ease, color 0.4s ease;
 }
 
 .container {
@@ -20,16 +23,18 @@ body {
 #hero {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding-top: 80px;
 }
 
 #hero h1 {
     font-size: 3.5em;
     margin-bottom: 20px;
+    font-weight: 700;
 }
 
 #hero p {
@@ -46,22 +51,37 @@ body {
     border-radius: 50px;
     cursor: pointer;
     transition: transform 0.3s ease;
+    font-weight: 600;
 }
 
 #hero button:hover {
     transform: translateY(-3px);
 }
 
-/* About Section */
-#about {
+/* Sections */
+section {
     padding: 100px 0;
-    background: #f8f9fa;
+    transition: background 0.4s ease;
 }
 
-/* Projects Section */
-#projects {
-    padding: 100px 0;
-    background: white;
+#about, #projects {
+    background: #ffffff;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2.4em;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 50px;
+}
+
+section p {
+    color: #444;
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
 }
 
 /* Navigation Bar */
@@ -92,6 +112,7 @@ body {
     color: white;
     font-size: 1.5em;
     margin: 0;
+    font-weight: 600;
 }
 
 #navbar.scrolled .nav-brand h3 {
@@ -102,7 +123,6 @@ body {
     list-style: none;
     display: flex;
     gap: 30px;
-    margin: 0;
 }
 
 .nav-links a {
@@ -121,20 +141,18 @@ body {
     color: #ffd700;
 }
 
-/* Update hero section to account for fixed nav */
-#hero {
-    margin-top: 0;
-}
-
 /* Contact Section */
 #contact {
-    padding: 100px 0;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     text-align: center;
 }
 
-/* === PROJECTS GRID === */
+#contact h2, #contact p {
+    color: white;
+}
+
+/* Projects Grid */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -148,7 +166,6 @@ body {
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     transition: all 0.4s ease;
-    cursor: pointer;
 }
 
 .project-card:hover {
@@ -178,7 +195,6 @@ body {
     color: #667eea;
     margin: 14px 0;
     font-weight: 500;
-    letter-spacing: 0.5px;
 }
 
 .demo-btn, .github-btn {
@@ -213,7 +229,7 @@ body {
     transform: scale(1.05);
 }
 
-/* === PARTICLES === */
+/* Particles */
 #tsparticles {
     position: fixed;
     top: 0; left: 0;
@@ -222,20 +238,20 @@ body {
     pointer-events: none;
 }
 
-/* === CLEAN & BIGGER DARK MODE TOGGLE === */
+/* Dark Mode Toggle */
 .theme-toggle {
     cursor: pointer;
     position: relative;
 }
 
 #dark-mode-toggle {
-    display: none; /* Hides the ugly checkbox */
+    display: none;
 }
 
 .theme-toggle label {
     position: relative;
-    width: 70px;      /* BIGGER */
-    height: 34px;     /* BIGGER */
+    width: 70px;
+    height: 34px;
     background: #ddd;
     border-radius: 50px;
     display: flex;
@@ -252,60 +268,51 @@ body {
     pointer-events: none;
 }
 
-.theme-toggle .sun {
-    left: 6px;
-    color: #f39c12;
-    opacity: 1;
-}
+.theme-toggle .sun { left: 6px; color: #f39c12; opacity: 1; }
+.theme-toggle .moon { right: 6px; color: #2c3e50; opacity: 0; transform: translateX(10px); }
 
-.theme-toggle .moon {
-    right: 6px;
-    color: #2c3e50;
-    opacity: 0;
-    transform: translateX(10px);
-}
+#dark-mode-toggle:checked + label { background: #667eea; }
+#dark-mode-toggle:checked + label .sun { opacity: 0; transform: translateX(36px); }
+#dark-mode-toggle:checked + label .moon { opacity: 1; transform: translateX(-10px); }
 
-/* When checked: Dark Mode ON */
-#dark-mode-toggle:checked + label {
-    background: #667eea;
-}
-
-#dark-mode-toggle:checked + label .sun {
-    opacity: 0;
-    transform: translateX(36px);
-}
-
-#dark-mode-toggle:checked + label .moon {
-    opacity: 1;
-    transform: translateX(-10px);
-}
-
-/* === DARK MODE STYLES === */
+/* === DARK MODE — FULL FIX === */
 .dark-mode {
     background: #0f0f0f;
     color: #e0e0e0;
 }
+
 .dark-mode #hero,
 .dark-mode #contact {
     background: linear-gradient(135deg, #1a1a2e, #16213e) !important;
 }
-.dark-mode .project-card {
-    background: #1a1a2e;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+
+.dark-mode #about,
+.dark-mode #projects {
+    background: #111 !important;
 }
+
+.dark-mode section h2,
+.dark-mode section p,
 .dark-mode .card-inner h3,
 .dark-mode .card-inner p {
-    color: #e0e0e0;
+    color: #ffffff !important;
 }
+
+.dark-mode .project-card {
+    background: #1a1a2e;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
 .dark-mode .nav-brand h3,
 .dark-mode .nav-links a {
     color: white;
 }
+
 .dark-mode #navbar.scrolled {
     background: rgba(20,20,30,0.95);
 }
 
-/* === MODAL POPUP === */
+/* Modals */
 .modal {
     display: none;
     position: fixed;
@@ -329,7 +336,7 @@ body {
     box-shadow: 0 20px 60px rgba(0,0,0,0.3);
 }
 
-#demo-iframe {
+#demo-iframe, #resume-iframe {
     width: 100%;
     height: 100%;
     border: none;
@@ -346,73 +353,100 @@ body {
     transition: 0.3s;
 }
 
-.close-btn:hover {
-    color: #ff5c5c;
-}
+.close-btn:hover { color: #ff5c5c; }
 
-.dark-mode .modal-content {
-    background: #1a1a2e;
-}
-.dark-mode .close-btn {
-    color: #ccc;
-}
-.dark-mode .close-btn:hover {
-    color: #ff5c5c;
-}
+.dark-mode .modal-content { background: #1a1a2e; }
+.dark-mode .close-btn { color: #ccc; }
+.dark-mode .close-btn:hover { color: #ff5c5c; }
 
-/* === CONTACT OPTIONS === */
+/* === CONTACT CARDS — PURE CSS HOVER (NO GSAP) === */
 .contact-options {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 18px;
+    gap: 20px;
     margin: 40px auto;
     max-width: 900px;
 }
 
 .contact-item {
-    text-align: center;
-    padding: 18px;
     background: white;
-    border-radius: 14px;
+    padding: 22px;
+    border-radius: 16px;
     box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-    transition: all 0.3s ease;
+    text-align: center;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, z-index 0s;
+    position: relative;
+    z-index: 1;
 }
 
 .contact-item:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 24px rgba(102, 126, 234, 0.15);
+    transform: scale(1.8);
+    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+    z-index: 100;
 }
 
 .contact-item a {
-    text-decoration: none;
-    color: #333;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
 }
 
 .contact-item i {
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
+    color: #4a5568;
+    transition: color 0.3s ease;
+}
+
+.contact-item:hover i {
     color: #667eea;
 }
 
 .contact-item span {
-    font-weight: 500;
-    font-size: 0.95em;
+    font-weight: 600;
+    font-size: 1em;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.contact-item:hover span {
+    color: #333;
+}
+
+.contact-text {
+    font-family: 'Courier New', monospace;
+    font-size: 0.8em;
+    color: #555;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    word-break: break-all;
+    line-height: 1.4;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.contact-item:hover .contact-text {
+    opacity: 1;
+}
+
+.contact-text:hover {
+    color: #667eea;
 }
 
 .msg-btn {
     background: #667eea;
     color: white;
     border: none;
-    padding: 15px 32px;
+    padding: 16px 36px;
     font-size: 1.1em;
     border-radius: 50px;
     cursor: pointer;
     transition: 0.3s;
-    margin: 20px auto;
+    margin: 30px auto;
     display: block;
     font-weight: 600;
 }
@@ -421,28 +455,41 @@ body {
     background: #ffd700;
     color: #333;
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(255,215,0,0.3);
 }
 
-/* === RESUME MODAL === */
+/* Dark Mode Contact */
+.dark-mode .contact-item {
+    background: #1a1a2e;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+
+.dark-mode .contact-item i {
+    color: #a0c4ff;
+}
+
+.dark-mode .contact-item:hover i {
+    color: #ffd700;
+}
+
+.dark-mode .contact-item span {
+    color: #e0e0e0;
+}
+
+.dark-mode .contact-text {
+    color: #a0c4ff;
+}
+
+.dark-mode .contact-text:hover {
+    color: #ffd700;
+}
+
+.dark-mode .contact-item:hover .contact-text {
+    opacity: 1;
+}
+
+/* Resume Modal */
 #resume-modal .modal-content {
     max-width: 900px;
     width: 90%;
     height: 85vh;
-    padding: 0;
-}
-
-#resume-iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-.dark-mode .contact-item {
-    background: #1a1a2e;
-    color: #e0e0e0;
-}
-
-.dark-mode .contact-item a {
-    color: #e0e0e0;
 }

@@ -13,7 +13,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// GSAP Animations
+// GSAP Animations (only entrance)
 gsap.registerPlugin(ScrollTrigger);
 
 gsap.from("#hero h1", { y: 100, opacity: 0, duration: 1, delay: 0.5 });
@@ -33,7 +33,7 @@ document.querySelectorAll('section').forEach((section) => {
     });
 });
 
-// Typewriter Effect
+// Typewriter
 function typeWriter(element, text, speed = 60) {
     let i = 0;
     element.innerHTML = '';
@@ -47,7 +47,7 @@ function typeWriter(element, text, speed = 60) {
     typing();
 }
 
-// Demo Modal
+// Modals
 function openModal(url) {
     const modal = document.getElementById('demo-modal');
     const iframe = document.getElementById('demo-iframe');
@@ -69,7 +69,6 @@ function closeModal() {
     });
 }
 
-// Resume Modal
 function openResumeModal() {
     const modal = document.getElementById('resume-modal');
     modal.style.display = 'flex';
@@ -91,7 +90,20 @@ window.onclick = function(event) {
     const resumeModal = document.getElementById('resume-modal');
     if (event.target === demoModal) closeModal();
     if (event.target === resumeModal) closeResumeModal();
-}
+};
+
+// === COPY TEXT ONLY (NO HOVER LOGIC) ===
+document.querySelectorAll('.contact-text').forEach(text => {
+    const copyText = text.getAttribute('data-copy');
+    text.addEventListener('click', (e) => {
+        e.stopPropagation();
+        navigator.clipboard.writeText(copyText).then(() => {
+            const original = text.innerHTML;
+            text.innerHTML = "Copied!";
+            setTimeout(() => text.innerHTML = original, 1000);
+        });
+    });
+});
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
@@ -124,4 +136,4 @@ document.addEventListener('DOMContentLoaded', () => {
     lucide.createIcons();
 });
 
-console.log('Contact + Resume Modal Ready!');
+console.log('PURE CSS HOVER + JS COPY = NO BUGS');
