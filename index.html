@@ -12,7 +12,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
+    <!-- Vanilla Tilt effect -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+
+    <!-- tsParticles for cursor -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 
     <!-- Your CSS -->
     <link rel="stylesheet" href="css/styles.css">
@@ -30,6 +34,10 @@
                 <li><a href="#projects" onclick="scrollToSection('projects')">Projects</a></li>
                 <li><a href="#contact" onclick="scrollToSection('contact')">Contact</a></li>
             </ul>
+            <div class="theme-toggle">
+                <input type="checkbox" id="dark-mode-toggle">
+                <label for="dark-mode-toggle"></label>
+            </div>
         </div>
     </nav>
 
@@ -98,6 +106,8 @@
             <p>Let's build something amazing together!</p>
         </div>
     </section>
+
+    <div id="tsparticles"></div>
 
     <script src="js/script.js"></script>
 </body>
