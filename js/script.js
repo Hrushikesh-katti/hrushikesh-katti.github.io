@@ -1,27 +1,44 @@
-// Smooth scrolling for navigation
+// Smooth scrolling
 function scrollToSection(sectionId) {
-    document.getElementById(sectionId).scrollIntoView({
-        behavior: 'smooth'
-    });
+    document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
 }
 
-// Add scroll event for navbar background
-window.addEventListener('scroll', function() {
-    const navbar = document.querySelector('nav'); // We'll add nav later
-    if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(255,255,255,0.95)';
-        navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+// Navbar scroll effect
+window.addEventListener('scroll', () => {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
     } else {
-        navbar.style.background = 'transparent';
-        navbar.style.boxShadow = 'none';
+        navbar.classList.remove('scrolled');
     }
 });
 
-// Typewriter effect for hero text (optional cool feature)
-function typeWriter(element, text, speed = 100) {
+// GSAP Animations
+gsap.registerPlugin(ScrollTrigger);
+
+// Hero Animation: Fade in + slide up
+gsap.from("#hero h1", { y: 100, opacity: 0, duration: 1, delay: 0.5 });
+gsap.from("#hero p", { y: 50, opacity: 0, duration: 1, delay: 0.8 });
+gsap.from("#hero button", { scale: 0.8, opacity: 0, duration: 0.8, delay: 1.2 });
+
+// Section Reveal on Scroll
+document.querySelectorAll('section').forEach((section) => {
+    gsap.from(section, {
+        y: 80,
+        opacity: 0,
+        duration: 1,
+        scrollTrigger: {
+            trigger: section,
+            start: "top 80%",
+            toggleActions: "play none none reverse"
+        }
+    });
+});
+
+// Typewriter Effect for Hero Subtitle
+function typeWriter(element, text, speed = 60) {
     let i = 0;
     element.innerHTML = '';
-    
     function typing() {
         if (i < text.length) {
             element.innerHTML += text.charAt(i);
@@ -32,27 +49,11 @@ function typeWriter(element, text, speed = 100) {
     typing();
 }
 
-// Initialize when page loads
-document.addEventListener('DOMContentLoaded', function() {
-    // Add typewriter effect to hero subtitle
-    const heroSubtitle = document.querySelector('#hero p');
-    if (heroSubtitle) {
-        const originalText = heroSubtitle.textContent;
-        typeWriter(heroSubtitle, originalText, 50);
-    }
-    
-    // Add click listeners to all "My Journey" buttons
-    const journeyButtons = document.querySelectorAll('button[onclick*="scrollToSection"]');
-    journeyButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            scrollToSection('about');
-        });
-    });
+// Initialize on DOM Load
+document.addEventListener('DOMContentLoaded', () => {
+    const heroP = document.querySelector('#hero p');
+    const fullText = "Data Scientist | Machine Learning Engineer | Business Intelligence Analyst";
+    typeWriter(heroP, fullText, 50);
 });
 
-// Project card hover effects (we'll add this later)
-function initProjectCards() {
-    // Coming when we add project cards
-}
-
-console.log('Portfolio JS loaded successfully! 🚀');
+console.log('GSAP Animations Loaded!');
