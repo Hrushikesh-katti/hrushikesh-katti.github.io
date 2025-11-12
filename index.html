@@ -18,7 +18,7 @@
     <!-- tsParticles for cursor -->
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 
-    <!-- Lucide Icons (for toggle) -->
+    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 
     <!-- Your CSS -->
@@ -75,7 +75,7 @@
                         <h3>Movie Success Predictor</h3>
                         <p>Predicts box office revenue using NLP, ensemble models, and sentiment analysis.</p>
                         <div class="tech">Python • Scikit-learn • Streamlit • NLP</div>
-                        <a href="#" class="demo-btn" target="_blank">Live Demo</a>
+                        <button class="demo-btn" onclick="openModal('https://your-movie-predictor.streamlit.app/?embed=true')">Live Demo</button>
                         <a href="https://github.com/Hrushikesh-katti/movie-success-predictor" class="github-btn" target="_blank">GitHub</a>
                     </div>
                 </div>
@@ -86,7 +86,7 @@
                         <h3>AI Job Hunt Coach</h3>
                         <p>Personalized resume + interview prep using LLMs and RAG.</p>
                         <div class="tech">LangChain • OpenAI • Gradio • RAG</div>
-                        <a href="#" class="demo-btn" target="_blank">Live Demo</a>
+                        <button class="demo-btn" onclick="openModal('https://your-job-coach.gradio.app')">Live Demo</button>
                         <a href="#" class="github-btn" target="_blank">GitHub</a>
                     </div>
                 </div>
@@ -97,7 +97,7 @@
                         <h3>Sales Dashboard (Power BI)</h3>
                         <p>Interactive KPI tracker with DAX, forecasting, and drill-downs.</p>
                         <div class="tech">Power BI • DAX • SQL • Forecasting</div>
-                        <a href="#" class="demo-btn" target="_blank">View Dashboard</a>
+                        <button class="demo-btn" onclick="openModal('https://app.powerbi.com/view?r=your-embed-link')">View Dashboard</button>
                         <a href="#" class="github-btn" target="_blank">GitHub</a>
                     </div>
                 </div>
@@ -112,6 +112,14 @@
             <p>Let's build something amazing together!</p>
         </div>
     </section>
+
+    <!-- Modal Popup -->
+    <div id="demo-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">×</span>
+            <iframe id="demo-iframe" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
 
     <div id="tsparticles"></div>
 
