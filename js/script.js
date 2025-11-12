@@ -47,7 +47,7 @@ function typeWriter(element, text, speed = 60) {
     typing();
 }
 
-// Modal Functions
+// Demo Modal
 function openModal(url) {
     const modal = document.getElementById('demo-modal');
     const iframe = document.getElementById('demo-iframe');
@@ -69,12 +69,28 @@ function closeModal() {
     });
 }
 
-// Close modal when clicking outside
+// Resume Modal
+function openResumeModal() {
+    const modal = document.getElementById('resume-modal');
+    modal.style.display = 'flex';
+    gsap.from(modal, { opacity: 0, scale: 0.8, duration: 0.4, ease: "back.out(1.7)" });
+}
+
+function closeResumeModal() {
+    const modal = document.getElementById('resume-modal');
+    gsap.to(modal, {
+        opacity: 0,
+        scale: 0.8,
+        duration: 0.3,
+        onComplete: () => modal.style.display = 'none'
+    });
+}
+
 window.onclick = function(event) {
-    const modal = document.getElementById('demo-modal');
-    if (event.target === modal) {
-        closeModal();
-    }
+    const demoModal = document.getElementById('demo-modal');
+    const resumeModal = document.getElementById('resume-modal');
+    if (event.target === demoModal) closeModal();
+    if (event.target === resumeModal) closeResumeModal();
 }
 
 // Initialize
@@ -83,7 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const fullText = "Data Scientist | Machine Learning Engineer | Business Intelligence Analyst";
     typeWriter(heroP, fullText, 50);
 
-    // Particles
     tsParticles.load("tsparticles", {
         particles: {
             number: { value: 80 },
@@ -101,7 +116,6 @@ document.addEventListener('DOMContentLoaded', () => {
         background: { color: "transparent" }
     });
 
-    // Dark Mode
     const toggle = document.getElementById('dark-mode-toggle');
     toggle.addEventListener('change', (e) => {
         document.body.classList.toggle('dark-mode', e.target.checked);
@@ -110,4 +124,4 @@ document.addEventListener('DOMContentLoaded', () => {
     lucide.createIcons();
 });
 
-console.log('LIVE DEMOS + MODAL READY!');
+console.log('Contact + Resume Modal Ready!');

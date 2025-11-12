@@ -60,7 +60,11 @@
     <section id="about">
         <div class="container">
             <h2>From BBA to AI/ML</h2>
-            <p>My unique story...</p>
+            <p>
+                I started with a BBA in Marketing, but data pulled me in. From Excel dashboards to building AI models that predict movie success and coach job seekers — I've bridged business and tech.  
+                <br><br>
+                I love turning raw data into insights that drive decisions. Whether it's NLP, computer vision, or scalable analytics, I build tools that work in the real world.
+            </p>
         </div>
     </section>
 
@@ -110,10 +114,63 @@
         <div class="container">
             <h2>Get In Touch</h2>
             <p>Let's build something amazing together!</p>
+            <div class="contact-options">
+                <div class="contact-item">
+                    <a href="mailto:hrushikeshskatti7@gmail.com" target="_blank">
+                        <i data-lucide="mail"></i>
+                        <span>Email</span>
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <a href="https://wa.me/919019838537" target="_blank">
+                        <i data-lucide="message-circle"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <a href="https://arattai.in/@9019838537" target="_blank">
+                        <i data-lucide="message-square"></i>
+                        <span>Arattai</span>
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <a href="https://t.me/9019838537" target="_blank">
+                        <i data-lucide="send"></i>
+                        <span>Telegram</span>
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <a href="sms:+919019838537?body=Hi Hrushikesh, let's connect!" target="_blank">
+                        <i data-lucide="phone"></i>
+                        <span>SMS</span>
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <a href="https://www.linkedin.com/in/hrushikesh-katti" target="_blank">
+                        <i data-lucide="linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <a href="https://github.com/Hrushikesh-katti/projects-portfolio" target="_blank">
+                        <i data-lucide="github"></i>
+                        <span>Projects Repo</span>
+                    </a>
+                </div>
+            </div>
+            <button class="msg-btn" onclick="openResumeModal()">View Resume</button>
         </div>
     </section>
 
-    <!-- Modal Popup -->
+    <!-- Resume Modal -->
+    <div id="resume-modal" class="modal">
+        <div class="modal-content resume-content">
+            <span class="close-btn" onclick="closeResumeModal()">×</span>
+            <iframe id="resume-iframe" src="assets/resume.pdf" frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <!-- Demo Modal -->
     <div id="demo-modal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal()">×</span>
