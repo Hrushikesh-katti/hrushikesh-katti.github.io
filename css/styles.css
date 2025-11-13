@@ -119,7 +119,7 @@ body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--tex
     text-align: center;
 }
 
-/* SKILLS — ORIGINAL COLORS */
+/* SKILLS — WIDER FOR SCIKIT & TABLEAU */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
@@ -147,49 +147,74 @@ body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--tex
     height: 40px;
 }
 
+/* WIDER TILES */
+.skill-item.wide {
+    grid-column: span 2;
+    padding: 1.5rem 1rem;
+}
+
+.skill-item.wide img {
+    width: 60px;
+    height: 60px;
+}
+
 .skill-item span {
     font-size: 0.9rem;
     font-weight: 600;
     color: var(--heading);
 }
 
-/* HINT */
-.hint-text {
-    text-align: center;
-    color: var(--gray);
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-    font-style: italic;
-}
-
-/* PROJECT LIST */
+/* PROJECT LIST — READ MORE BUTTONS */
 .project-item {
-    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
     border-radius: 12px;
-    cursor: pointer;
-    transition: all 0.3s;
     border: 1px solid transparent;
     margin-bottom: 1rem;
+    transition: all 0.3s;
 }
 
 .project-item:hover {
     background: rgba(212,175,55,0.1);
     border-color: var(--gold);
-    transform: translateX(8px);
+    transform: translateX(4px);
 }
 
-.project-item h3 {
+.project-text {
+    flex: 1;
+}
+
+.project-text h3 {
     color: var(--gold);
     font-size: 1.3rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
 }
 
-.project-item p {
+.project-text p {
     font-size: 0.95rem;
     color: var(--text);
 }
 
-/* PROJECT DEEP — FULL WIDTH */
+.read-more-btn {
+    background: var(--gold);
+    color: #000;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.read-more-btn:hover {
+    background: #f59e0b;
+    transform: scale(1.05);
+}
+
+/* PROJECT DEEP */
 .project-deep {
     padding: 6rem 0;
     background: var(--bg);
@@ -333,7 +358,7 @@ body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--tex
     color: var(--text);
 }
 
-/* THEME TOGGLE — SEXY */
+/* THEME TOGGLE */
 .theme-toggle {
     position: fixed;
     top: 24px;

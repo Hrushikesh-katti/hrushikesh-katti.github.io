@@ -19,11 +19,9 @@ document.querySelectorAll('.toggle-btn').forEach(btn => {
         const mode = btn.dataset.mode;
         const parent = btn.closest('.project-deep');
         parent.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
-        parent.querySelectorAll('.project-content').forEach(c => {
-            c.classList.remove('active');
-            setTimeout(() => c.classList.add('active'), 10);
-        });
+        parent.querySelectorAll('.project-content').forEach(c => c.classList.remove('active'));
         btn.classList.add('active');
+        parent.querySelector(`.project-content.${mode}`).classList.add('active');
     });
 });
 

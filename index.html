@@ -47,7 +47,11 @@
                     </div>
                     <div class="skill-item">
                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
-                        <span>Git / GitHub</span>
+                        <span>Git</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+                        <span>GitHub</span>
                     </div>
                     <div class="skill-item">
                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">
@@ -65,7 +69,8 @@
                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy">
                         <span>NumPy</span>
                     </div>
-                    <div class="skill-item">
+                    <!-- WIDER TILE FOR SCIKIT-LEARN -->
+                    <div class="skill-item wide">
                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt="Scikit-learn">
                         <span>Scikit-learn</span>
                     </div>
@@ -89,17 +94,15 @@
                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg" alt="Streamlit">
                         <span>Streamlit</span>
                     </div>
-                    <!-- REAL POWER BI -->
                     <div class="skill-item">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI">
                         <span>Power BI</span>
                     </div>
-                    <!-- REAL TABLEAU -->
-                    <div class="skill-item">
+                    <!-- WIDER TILE FOR TABLEAU -->
+                    <div class="skill-item wide">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Tableau_Logo.png" alt="Tableau">
                         <span>Tableau</span>
                     </div>
-                    <!-- REAL EXCEL -->
                     <div class="skill-item">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg" alt="Excel">
                         <span>Excel</span>
@@ -110,18 +113,26 @@
             <!-- PROJECTS LIST CARD -->
             <section class="card projects-list-card">
                 <h2>Projects</h2>
-                <p class="hint-text">Click any project to explore in detail</p>
-                <div class="project-item" onclick="scrollToProject(0)">
-                    <h3>Movie Success Predictor</h3>
-                    <p>Predicts box office revenue with 87% accuracy using NLP & ML.</p>
+                <div class="project-item">
+                    <div class="project-text">
+                        <h3>Movie Success Predictor</h3>
+                        <p>Predicts box office revenue with 87% accuracy using NLP & ML.</p>
+                    </div>
+                    <button class="read-more-btn" onclick="scrollToProject(0)">Read More</button>
                 </div>
-                <div class="project-item" onclick="scrollToProject(1)">
-                    <h3>AI Job Coach</h3>
-                    <p>Personalized career guidance for 500+ users using LLMs.</p>
+                <div class="project-item">
+                    <div class="project-text">
+                        <h3>AI Job Coach</h3>
+                        <p>Personalized career guidance for 500+ users using LLMs.</p>
+                    </div>
+                    <button class="read-more-btn" onclick="scrollToProject(1)">Read More</button>
                 </div>
-                <div class="project-item" onclick="scrollToProject(2)">
-                    <h3>Power BI Sales Dashboard</h3>
-                    <p>Real-time analytics for Fortune 500 client with DAX & Azure.</p>
+                <div class="project-item">
+                    <div class="project-text">
+                        <h3>Power BI Sales Dashboard</h3>
+                        <p>Real-time analytics for Fortune 500 client with DAX & Azure.</p>
+                    </div>
+                    <button class="read-more-btn" onclick="scrollToProject(2)">Read More</button>
                 </div>
             </section>
 
@@ -191,14 +202,14 @@
         <div class="container">
             <h2>My Journey</h2>
             <p>From <strong>BBA graduate</strong> to <strong>AI/ML engineer</strong> in 12 months. Self-taught Python, ML, and BI tools. Built 3 production-ready tools used by real people.</p>
-            <p>I don’t wait for opportunities. <strong>I build them.</strong></p>
+            <p>I don't wait for opportunities. <strong>I build them.</strong></p>
         </div>
     </section>
 
     <!-- CONTACT -->
     <section id="contact" class="contact-section">
         <div class="container">
-            <h2>Let’s Connect</h2>
+            <h2>Let's Connect</h2>
             <div class="contact-grid">
                 <a href="mailto:hrushikeshskatti7@gmail.com" class="contact-card">
                     <i data-lucide="mail"></i>
@@ -214,6 +225,11 @@
                     <i data-lucide="linkedin"></i>
                     <span>LinkedIn</span>
                     <p>linkedin.com/in/hrushikesh-katti</p>
+                </a>
+                <a href="https://github.com/Hrushikesh-katti/projects-portfolio" target="_blank" class="contact-card">
+                    <i data-lucide="github"></i>
+                    <span>GitHub</span>
+                    <p>projects-portfolio</p>
                 </a>
             </div>
         </div>
