@@ -1,4 +1,4 @@
-/* GOLD + NAVY PROFESSIONAL */
+/* GOLD + NAVY — FINAL PERFECTION */
 :root {
     --gold: #d4af37;
     --navy: #0f172a;
@@ -26,9 +26,9 @@ body:not(.dark-mode) {
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); transition: all 0.4s; }
 
-.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
 
-/* GRID LAYOUT */
+/* GRID */
 .main-grid {
     display: grid;
     grid-template-columns: 320px 1fr;
@@ -56,30 +56,47 @@ body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--tex
 }
 
 .sidebar-photo {
-    width: 180px; height: 180px; border-radius: 50%; object-fit: cover;
-    border: 6px solid var(--gold); margin-bottom: 1.5rem;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid var(--gold);
+    margin-bottom: 1.5rem;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
 .sidebar-name {
-    font-size: 2rem; font-weight: 800; color: var(--gold); margin-bottom: 0.5rem;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
 }
 
 .sidebar-title {
-    font-size: 1.1rem; opacity: 0.9; margin-bottom: 2rem;
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
 }
 
 .sidebar-btn {
-    background: var(--gold); color: #000; border: none; padding: 14px 32px;
-    border-radius: 50px; font-weight: 700; cursor: pointer; font-size: 1rem;
+    background: var(--gold);
+    color: #000;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 1rem;
     transition: all 0.3s;
 }
 
 .sidebar-btn:hover {
-    background: #f59e0b; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(212,175,55,0.4);
+    background: #f59e0b;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(212,175,55,0.4);
 }
 
-/* MAIN CONTENT */
+/* MAIN */
 .main-content {
     padding: 3rem 2rem;
     display: flex;
@@ -88,139 +105,289 @@ body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--tex
 }
 
 .card {
-    background: var(--card); padding: 2.5rem; border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 1px solid rgba(212,175,55,0.2);
+    background: var(--card);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border: 1px solid rgba(212,175,55,0.2);
 }
 
 .card h2 {
-    font-size: 2rem; color: var(--heading); margin-bottom: 1.5rem; text-align: center;
+    font-size: 2rem;
+    color: var(--heading);
+    margin-bottom: 1.5rem;
+    text-align: center;
 }
 
-/* SKILLS GRID */
+/* SKILLS — ORIGINAL COLORS */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
     gap: 1.5rem;
 }
 
 .skill-item {
-    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
-    padding: 1rem; border-radius: 12px; transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-radius: 12px;
+    transition: all 0.3s;
     background: rgba(212,175,55,0.05);
 }
 
 .skill-item:hover {
-    background: rgba(212,175,55,0.15); transform: translateY(-4px);
+    background: rgba(212,175,55,0.15);
+    transform: translateY(-4px);
 }
 
 .skill-item img {
-    width: 40px; height: 40px; filter: brightness(0) saturate(100%) invert(20%) sepia(90%) saturate(1000%) hue-rotate(30deg);
+    width: 40px;
+    height: 40px;
 }
 
 .skill-item span {
-    font-size: 0.9rem; font-weight: 600; color: var(--heading);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--heading);
 }
 
-/* PROJECTS LIST */
+/* HINT */
+.hint-text {
+    text-align: center;
+    color: var(--gray);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+/* PROJECT LIST */
 .project-item {
-    padding: 1.5rem; border-radius: 12px; cursor: pointer; transition: all 0.3s;
-    border: 1px solid transparent; margin-bottom: 1rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 1px solid transparent;
+    margin-bottom: 1rem;
 }
 
 .project-item:hover {
-    background: rgba(212,175,55,0.1); border-color: var(--gold);
+    background: rgba(212,175,55,0.1);
+    border-color: var(--gold);
     transform: translateX(8px);
 }
 
 .project-item h3 {
-    color: var(--gold); font-size: 1.3rem; margin-bottom: 0.5rem;
+    color: var(--gold);
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
 }
 
 .project-item p {
-    font-size: 0.95rem; color: var(--text);
+    font-size: 0.95rem;
+    color: var(--text);
 }
 
-/* PROJECT DEEP */
+/* PROJECT DEEP — FULL WIDTH */
 .project-deep {
-    padding: 5rem 0; background: var(--bg);
+    padding: 6rem 0;
+    background: var(--bg);
+}
+
+.project-deep .container {
+    max-width: 1000px;
 }
 
 .project-deep h2 {
-    font-size: 2.8rem; text-align: center; margin-bottom: 2rem; color: var(--heading);
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--heading);
 }
 
 .toggle-buttons {
-    display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
 }
 
 .toggle-btn {
-    padding: 12px 28px; border-radius: 50px; border: none; font-weight: 600;
-    background: #e2e8f0; color: #475569; cursor: pointer; transition: all 0.3s;
+    padding: 14px 32px;
+    border-radius: 50px;
+    border: none;
+    font-weight: 700;
+    background: #e2e8f0;
+    color: #475569;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 1.1rem;
 }
 
-.toggle-btn.active, .toggle-btn:hover {
-    background: var(--gold); color: #000;
+.toggle-btn.active,
+.toggle-btn:hover {
+    background: var(--gold);
+    color: #000;
+    transform: scale(1.05);
 }
 
 .project-content {
-    max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    line-height: 1.9;
+    opacity: 0;
+    transform: translateX(-20px);
     display: none;
 }
 
-.project-content.active { display: block; }
+.project-content.active {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+    animation: fadeInLeft 0.5s ease forwards;
+}
+
+.project-content.tech.active {
+    animation: fadeInRight 0.5s ease forwards;
+}
+
+@keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
 
 .demo-link {
-    display: block; text-align: center; margin-top: 2rem;
-    background: var(--gold); color: #000; padding: 14px 32px; border-radius: 50px;
-    text-decoration: none; font-weight: 700; max-width: 200px; margin: 2rem auto 0;
+    display: block;
+    text-align: center;
+    margin: 3rem auto 0;
+    max-width: 220px;
+    background: var(--gold);
+    color: #000;
+    padding: 16px 36px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
 }
 
 /* ABOUT & CONTACT */
-.about-section, .contact-section {
-    padding: 5rem 0; text-align: center;
+.about-section,
+.contact-section {
+    padding: 5rem 0;
+    text-align: center;
 }
 
-.about-section p, .contact-section p {
-    max-width: 700px; margin: 1rem auto; font-size: 1.1rem;
+.about-section p,
+.contact-section p {
+    max-width: 700px;
+    margin: 1rem auto;
+    font-size: 1.1rem;
 }
 
 .contact-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem; margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
 }
 
 .contact-card {
-    background: var(--card); padding: 2rem; border-radius: 16px;
-    text-decoration: none; color: inherit; transition: all 0.3s;
+    background: var(--card);
+    padding: 2rem;
+    border-radius: 16px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s;
     border: 1px solid rgba(212,175,55,0.2);
 }
 
 .contact-card:hover {
-    transform: translateY(-8px); box-shadow: 0 15px 30px rgba(212,175,55,0.2);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(212,175,55,0.2);
     border-color: var(--gold);
 }
 
 .contact-card i {
-    width: 48px; height: 48px; color: var(--gold); margin-bottom: 1rem;
+    width: 48px;
+    height: 48px;
+    color: var(--gold);
+    margin-bottom: 1rem;
 }
 
 .contact-card span {
-    display: block; font-weight: 700; color: var(--heading); margin-bottom: 0.5rem;
+    display: block;
+    font-weight: 700;
+    color: var(--heading);
+    margin-bottom: 0.5rem;
 }
 
 .contact-card p {
-    font-size: 0.9rem; color: var(--text);
+    font-size: 0.9rem;
+    color: var(--text);
 }
 
-/* TOGGLE */
+/* THEME TOGGLE — SEXY */
 .theme-toggle {
-    position: fixed; top: 24px; right: 24px; z-index: 100;
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    z-index: 100;
+}
+
+#dark-mode-toggle {
+    display: none;
 }
 
 .theme-toggle label {
-    width: 70px; height: 36px; background: #334155; border-radius: 50px;
-    display: flex; align-items: center; padding: 0 6px; cursor: pointer;
+    width: 70px;
+    height: 36px;
+    background: #334155;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 6px;
+    cursor: pointer;
+    position: relative;
     border: 2px solid var(--gold);
+    overflow: hidden;
 }
 
-#dark-mode-toggle:checked + label { background: var(--gold); }
+.theme-toggle .icon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    color: white;
+}
+
+.theme-toggle .sun {
+    left: 8px;
+    opacity: 1;
+}
+
+.theme-toggle .moon {
+    right: 8px;
+    opacity: 0;
+    transform: translateX(10px);
+}
+
+#dark-mode-toggle:checked + label {
+    background: var(--gold);
+}
+
+#dark-mode-toggle:checked + label .sun {
+    opacity: 0;
+    transform: translateX(36px);
+}
+
+#dark-mode-toggle:checked + label .moon {
+    opacity: 1;
+    transform: translateX(-10px);
+}

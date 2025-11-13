@@ -6,10 +6,11 @@ function scrollToProject(index) {
     const id = `project-${index}`;
     scrollToSection(id);
     setTimeout(() => {
-        document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
-        document.querySelectorAll('.project-content').forEach(c => c.classList.remove('active'));
-        document.querySelector(`#${id} .toggle-btn[data-mode="business"]`).classList.add('active');
-        document.querySelector(`#${id} .project-content.business`).classList.add('active');
+        const section = document.getElementById(id);
+        section.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+        section.querySelectorAll('.project-content').forEach(c => c.classList.remove('active'));
+        section.querySelector('.toggle-btn[data-mode="business"]').classList.add('active');
+        section.querySelector('.project-content.business').classList.add('active');
     }, 500);
 }
 
@@ -18,9 +19,11 @@ document.querySelectorAll('.toggle-btn').forEach(btn => {
         const mode = btn.dataset.mode;
         const parent = btn.closest('.project-deep');
         parent.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
-        parent.querySelectorAll('.project-content').forEach(c => c.classList.remove('active'));
+        parent.querySelectorAll('.project-content').forEach(c => {
+            c.classList.remove('active');
+            setTimeout(() => c.classList.add('active'), 10);
+        });
         btn.classList.add('active');
-        parent.querySelector(`.project-content.${mode}`).classList.add('active');
     });
 });
 
